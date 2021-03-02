@@ -1,22 +1,15 @@
 import Mirador from 'mirador/dist/es/src/index';
-import { miradorImageToolsPlugin } from 'mirador-image-tools';
+import annotationPlugins from 'mirador-annotations';
+import SimpleAnnotationServerV2Adapter from 'mirador-annotations/es/SimpleAnnotationServerV2Adapter';
 
-const config = {
-  id: 'demo',
-  windows: [{
-    imageToolsEnabled: true,
-    imageToolsOpen: true,
-    manifestId: 'https://purl.stanford.edu/sn904cj3429/iiif/manifest',
-  }],
-  theme: {
-    palette: {
-      primary: {
-        main: '#1967d2',
-      },
-    },
-  },
+/*
+ Export Mirador and annotation plugins to Global
+*/
+
+const pluginsFromMiradorAnnotations = [...annotationPlugins];
+const exports = {
+  Mirador, SimpleAnnotationServerV2Adapter, pluginsFromMiradorAnnotations
 };
 
-Mirador.viewer(config, [
-  ...miradorImageToolsPlugin,
-]);
+export default exports;
+

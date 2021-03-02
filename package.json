@@ -13,6 +13,7 @@
   "dependencies": {
     "css-loader": "^3.6.0",
     "mirador": "^3.0.0",
+    "mirador-annotations": "https://github.com/davidwong-1/mirador-annotations/tarball/master",
     "mirador-image-tools": "^0.10.0",
     "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
